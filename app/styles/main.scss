@@ -1,25 +1,79 @@
 // bower:scss
+@import "bower_components/font-awesome/scss/font-awesome.scss";
 // endbower
+@import url('https://fonts.googleapis.com/css?family=Dosis:400,700');
 
-body {
-  background: #fafafa;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #333;
+$main: #676767;
+$gray: rgba(128, 128, 128, 0.92);
+$border: rgb(234, 234, 234);
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.hero-unit {
-  margin: 50px auto 0 auto;
-  width: 300px;
-  font-size: 18px;
-  font-weight: 200;
-  line-height: 30px;
-  background-color: #eee;
-  border-radius: 6px;
-  padding: 60px;
-  h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
+body, html {
+  font-family: 'Dosis', sans-serif;
+  color: $main;
+}
+
+.container {
+  font-family: 'Dosis', sans-serif;
+  margin: 0 auto;
+  max-width: 1024px;
+}
+
+.header {
+  padding: 32px 0;
+  border-bottom: 1px solid $border;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  &__name {
+    font-weight: normal;
+  }
+}
+
+.menu {
+  list-style: none;
+  color: $gray;
+  &__item {
+    margin-left: 16px;
+    display: inline-block;
+  }
+}
+
+.item {
+  margin-top: 32px;
+
+  > h4 {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+}
+
+.portfolio {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  &__item {
+    max-width: 20%;
+    max-height: 300px;
+    border: 1px solid $border;
+  }
+}
+
+.footer {
+  text-align: right;
+  margin-top: 32px;
+  padding-top: 32px;
+  border-top: 1px solid $border;
+  i {
+    display: inline-block;
+    margin-left: 8px;
   }
 }
 
