@@ -58,9 +58,17 @@ body, html {
   }
 }
 
-.about{
+.about {
   display: flex;
+  &__text {
+    padding-left: 32px;
+    p {
+      text-indent: 1.5em; /* Отступ первой строки */
+      text-align: justify; /* Выравнивание по ширине */
+    }
+  }
 }
+
 .avatar {
   text-align: center;
   float: left;
