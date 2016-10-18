@@ -26,7 +26,7 @@ body, html {
 }
 
 .header {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   padding: 32px 0;
   border-bottom: 1px solid $border;
   display: flex;
@@ -44,13 +44,20 @@ body, html {
   &__item {
     margin-left: 16px;
     display: inline-block;
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
   }
 }
 
 .item {
   font-size: 1.2rem;
-  margin-top: 32px;
+  margin: 32px auto auto 0;
+
   clear: both;
+  width: 85%;
 
   > h4 {
     text-align: center;
@@ -63,8 +70,9 @@ body, html {
   &__text {
     padding-left: 32px;
     p {
-      text-indent: 1.5em; /* Отступ первой строки */
+      text-indent: 1.5rem; /* Отступ первой строки */
       text-align: justify; /* Выравнивание по ширине */
+      margin-bottom: 1em;
     }
   }
 }
@@ -79,15 +87,26 @@ body, html {
   }
 }
 
+.work {
+  p {
+    margin-bottom: 1em;
+    white-space: pre;
+  }
+}
+
 .portfolio {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
 
   &__item {
-    max-width: 20%;
-    max-height: 300px;
+    min-width: 250px;
+    height: 250px;
     border: 1px solid $border;
+    margin-bottom: 1em;
+
   }
 }
 
