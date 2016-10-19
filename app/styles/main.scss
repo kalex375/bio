@@ -2,9 +2,10 @@
 @import "bower_components/font-awesome/scss/font-awesome.scss";
 // endbower
 @import url('https://fonts.googleapis.com/css?family=Dosis:400,700');
-
+$c1:#373737;
 $main: #676767;
-$gray: rgba(128, 128, 128, 0.92);
+$gray: #808080;
+$l: #C0C0C0;
 $border: rgb(234, 234, 234);
 
 * {
@@ -53,13 +54,15 @@ body, html {
 }
 
 .item {
-  font-size: 1.2rem;
+  /*font-size: 1.2rem;*/
   margin: 32px auto auto 0;
 
   clear: both;
   width: 85%;
 
-  > h4 {
+  > h3, >h4 {
+    color: #000000;
+    letter-spacing: 4px;
     text-align: center;
     margin-bottom: 32px;
   }
@@ -90,7 +93,9 @@ body, html {
 .work {
   p {
     margin-bottom: 1em;
-    white-space: pre;
+    strong {
+      text-transform: uppercase;
+    }
   }
 }
 
