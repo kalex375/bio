@@ -3,7 +3,7 @@
  */
 'use strict';
 
-var colors = [0x000000, 0xFFFFFF, 0x373737, 0x676767, 0x808080, 0xC0C0C0];
+var colors = [0x000000, 0xFFFFFF, 0x423b43, 0x6b5e68, 0xdce3e9, 0xbeb8b8];
 
 var Game = function (config) {
 
@@ -94,10 +94,9 @@ var Game = function (config) {
     if (isAnimPlay) {
       return
     }
-
     // get the shape that was clicked on
-    var shape = evt.target;
 
+    let shape = evt.target;
     let curColor = shape.color;
 
     if (curColor < 2) return;
@@ -221,12 +220,9 @@ var Game = function (config) {
       for (let j = 0; j < h; j++) {
         let curColor = pole[i][j].color;
         if (curColor) {
-
           let score = floodFill(i, j, curColor, 1);
           floodFill(i, j, 1, curColor);
-
           if (score > 1) return false;
-
         }
       }
     }
@@ -245,8 +241,6 @@ var Game = function (config) {
   }
 
   function drawEnd(text, background, textcolor) {
-
-
     var style = {
       font: 'bold 24px Arial',
       fill: textcolor,

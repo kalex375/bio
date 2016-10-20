@@ -2,10 +2,9 @@
 @import "bower_components/font-awesome/scss/font-awesome.scss";
 // endbower
 @import url('https://fonts.googleapis.com/css?family=Dosis:400,700');
-$c1:#373737;
+
 $main: #676767;
 $gray: #808080;
-$l: #C0C0C0;
 $border: rgb(234, 234, 234);
 
 * {
@@ -18,6 +17,10 @@ $border: rgb(234, 234, 234);
 body, html {
   font-family: 'Dosis', sans-serif;
   color: $main;
+}
+
+a {
+  color: #000000
 }
 
 .container {
@@ -53,14 +56,14 @@ body, html {
   }
 }
 
-.item {
+.section {
   /*font-size: 1.2rem;*/
-  margin: 32px auto auto 0;
+  margin: 32px auto 0 auto;
 
   clear: both;
   width: 85%;
 
-  > h3, >h4 {
+  > h3, > h4 {
     color: #000000;
     letter-spacing: 4px;
     text-align: center;
@@ -111,19 +114,42 @@ body, html {
     height: 250px;
     border: 1px solid $border;
     margin-bottom: 1em;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.8;
+    filter: grayscale(90%);
+    transition: all 0.5s;
+    &:hover {
+      opacity: 1;
+      filter: grayscale(0%);
+
+    }
+
+    @for $i from 1 through 5 {
+      &--#{$i} {
+        background-image: url("../images/#{$i}.jpeg");
+      }
+    }
 
   }
+}
+
+.contact {
+
 }
 
 .footer {
   text-align: right;
   margin-top: 32px;
+  margin-bottom: 32px;
   padding-top: 32px;
   border-top: 1px solid $border;
   i {
     display: inline-block;
     margin-left: 8px;
+    color: $main;
   }
+
 }
 
 .browserupgrade {
