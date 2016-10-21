@@ -294,18 +294,22 @@ var Game = function (config) {
 };
 
 
-let container = document.querySelector('#canva');
+document.addEventListener("DOMContentLoaded", function () {
+
+  let container = document.querySelector('#canva');
+
+  //noinspection JSSuspiciousNameCombination
+  let game = new Game({
+    containerId: 'canva',
+    //scoreId: 'score',
+    width: container.clientWidth,
+    height: container.clientWidth,
+    blockWidth: 8,
+    blockHeight: 8
+  });
 
 
-let game = new Game({
-  containerId: 'canva',
-  //scoreId: 'score',
-  width: container.clientWidth,
-  height: container.clientWidth,
-  blockWidth: 8,
-  blockHeight: 8
 });
-
 /*
  document.querySelector('#new-game').addEventListener('click', function () {
  game.reset();

@@ -106,29 +106,35 @@ a {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  align-items: center;
+  align-items: flex-start;
   flex-wrap: wrap;
 
   &__item {
+    max-width: 250px;
+    width: 250px;
     min-width: 250px;
-    height: 250px;
-    border: 1px solid $border;
-    margin-bottom: 1em;
+    //border: 1px solid $border;
+    margin-bottom: 2em;
     background-position: center;
     background-size: cover;
     opacity: 0.8;
     filter: grayscale(90%);
-    transition: all 0.5s;
+    transition: all 0.5s ease;
+    -webkit-font-smoothing: antialiased;
+    div {
+      height: 250px;
+    }
+    img {
+      max-width: 100%;
+    }
+
+    p {
+      margin-top: 8px;
+    }
+
     &:hover {
       opacity: 1;
       filter: grayscale(0%);
-
-    }
-
-    @for $i from 1 through 5 {
-      &--#{$i} {
-        background-image: url("../images/#{$i}.jpeg");
-      }
     }
 
   }
