@@ -294,7 +294,7 @@ var Game = function (config) {
 };
 
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener('DOMContentLoaded', function () {
 
   let container = document.querySelector('#canva');
 
