@@ -2,7 +2,7 @@ $(document).ready(function () {
   // Add smooth scrolling to all links
   $('.menu a').on('click', function (event) {
 
-    $('input[type="checkbox"]').prop("checked", false);
+    $('input[type="checkbox"]').prop('checked', false);
     // Make sure this.hash has a value before overriding default behavior
     if (this.hash !== '') {
       // Prevent default anchor click behavior
