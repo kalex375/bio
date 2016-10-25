@@ -293,7 +293,6 @@ var Game = function (config) {
   me.reset();
 };
 
-
 document.addEventListener('DOMContentLoaded', function () {
 
   let container = document.querySelector('#canva');

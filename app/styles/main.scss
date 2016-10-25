@@ -30,46 +30,51 @@ a {
   padding: 0.2em 0;
 }
 
+.container {
+  font-family: 'Dosis', sans-serif;
+  margin: 0 auto;
+  max-width: 1024px;
+}
+
 .header {
   font-size: 1.1rem;
-  padding: 32px 0;
+  padding: 16px 0;
   border-bottom: 1px solid $border;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: baseline;
   position: relative;
+
   &__name {
     font-weight: normal;
-    padding-left: 16px;
+    padding-left: 64px;
   }
-  label {
+
+  &__bar {
     display: block;
     width: 42px;
     height: 42px;
     text-align: center;
-    position: fixed;
-    top: 10px;
+    position: absolute;
+    top: 16px;
     left: 10px;
-    -moz-transition: all 200ms ease-in;
-    -webkit-transition: all 200ms ease-in;
-    -o-transition: all 200ms ease-in;
-    transition: all 200ms ease-in;
-    z-index: 500;
+    transition: width 200ms ease-in;
   }
+
   input[type="checkbox"] {
     display: none;
   }
-  input[type="checkbox"]:checked ~ ul {
-    margin: 0;
-  }
-  input[type="checkbox"]:checked ~ label {
-    left: 260px;
+  @media only screen and (max-width: 740px) {
+    input[type="checkbox"]:checked ~ .menu {
+      width: 200px;
+    }
   }
 }
 
 .menu {
   list-style: none;
+  overflow: hidden;
   color: $gray;
   position: fixed;
   top: 0;
@@ -77,22 +82,114 @@ a {
   display: block;
   border: 1px solid $border;
   background-color: #ffffff;
-
-  width: 250px;
+  width: 0;
   height: 100%;
-  margin: 0 0 0 -250px;
-  -moz-transition: all 200ms ease-in;
-  -webkit-transition: all 200ms ease-in;
-  -o-transition: all 200ms ease-in;
   transition: all 200ms ease-in;
+  z-index: 500;
+  box-shadow: 15px 0px 26px -6px rgba(0, 0, 0, 0.3);
 
   &__item {
+    &--bar {
+      padding: 16px;
+      text-align: right;
+    }
     a {
       display: block;
-      padding: 32px;
+      padding: 16px;
       text-decoration: none;
       color: inherit;
+      white-space: nowrap;
     }
+  }
+}
+
+.avatar {
+  text-align: center;
+  float: left;
+  img {
+    max-width: 200px;
+    border-radius: 50%;
+    border: 1px solid $border
+  }
+}
+
+.section {
+  margin: 32px auto 0 auto;
+  clear: both;
+  width: 85%;
+
+  > h3, > h4 {
+    color: #000000;
+    letter-spacing: 4px;
+    text-align: center;
+    margin-bottom: 32px;
+  }
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  &__text {
+    padding-top: 16px;
+    p {
+      text-indent: 1.5rem; /* Отступ первой строки */
+      text-align: justify; /* Выравнивание по ширине */
+      margin-bottom: 1em;
+    }
+  }
+}
+
+.work {
+  p {
+    margin-bottom: 1em;
+    strong {
+      text-transform: uppercase;
+    }
+  }
+}
+
+.portfolio {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+
+  &__item {
+    padding: 0 16px;
+    max-width: 250px;
+    width: 250px;
+    min-width: 250px;
+    margin-bottom: 2em;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.8;
+    filter: grayscale(90%);
+    transition: all 0.5s ease;
+    -webkit-font-smoothing: antialiased;
+
+    div {
+      height: 250px;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    p {
+      margin-top: 8px;
+    }
+
+    &:hover {
+      opacity: 1;
+      filter: grayscale(0%);
+    }
+  }
+}
+
+.contact {
+  p {
+    text-align: justify;
   }
 }
 
@@ -102,65 +199,64 @@ a {
   margin-bottom: 32px;
   padding-top: 32px;
   border-top: 1px solid $border;
+
   i {
     display: inline-block;
     color: $main;
   }
+
   a:not(:first-child) {
     margin-left: 32px;
   }
+}
 
+.scrollToTop {
+  padding: 8px;
+  text-align: center;
+  background: $border;
+  color: $gray;
+  text-decoration: none;
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  display: none;
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 @media only screen and (min-width: 740px) {
 
   .container {
-    font-family: 'Dosis', sans-serif;
-    margin: 0 auto;
-    max-width: 1024px;
+    padding: 0 32px;
   }
 
   .header {
     padding: 32px 0;
-    border-bottom: 1px solid $border;
-    display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    align-items: baseline;
     &__name {
+      padding-left: 0;
+    }
+    &__bar {
+      display: none;
     }
   }
 
   .menu {
+    position: static;
+    border: none;
+    width: auto;
+    height: auto;
+    box-shadow: none;
     &__item {
+      &--bar {
+        display: none;
+      }
       margin-left: 16px;
       display: inline-block;
     }
-  }
-
-  .section {
-    margin: 32px auto 0 auto;
-
-    clear: both;
-    width: 85%;
-
-    > h3, > h4 {
-      color: #000000;
-      letter-spacing: 4px;
-      text-align: center;
-      margin-bottom: 32px;
-    }
-  }
-
-  .about {
-    display: flex;
-    &__text {
-      padding-left: 32px;
-      p {
-        text-indent: 1.5rem; /* Отступ первой строки */
-        text-align: justify; /* Выравнивание по ширине */
-        margin-bottom: 1em;
-      }
+    a {
+      padding: 0;
     }
   }
 
@@ -174,54 +270,21 @@ a {
     }
   }
 
-  .work {
-    p {
-      margin-bottom: 1em;
-      strong {
-        text-transform: uppercase;
-      }
-    }
+  .section {
+    padding: 0 64px;
+    width: auto;
   }
-
-  .portfolio {
-    display: flex;
+  .about {
     flex-direction: row;
-    justify-content: space-around;
-    align-items: flex-start;
-    flex-wrap: wrap;
-
-    &__item {
-      max-width: 250px;
-      width: 250px;
-      min-width: 250px;
-      margin-bottom: 2em;
-      background-position: center;
-      background-size: cover;
-      opacity: 0.8;
-      filter: grayscale(90%);
-      transition: all 0.5s ease;
-      -webkit-font-smoothing: antialiased;
-      div {
-        height: 250px;
-      }
-      img {
-        max-width: 100%;
-      }
-
-      p {
-        margin-top: 8px;
-      }
-
-      &:hover {
-        opacity: 1;
-        filter: grayscale(0%);
-      }
-
+    &__text {
+      padding-top: 0;
+      padding-left: 32px;
     }
   }
 
   .footer {
     text-align: right;
+    padding-right: 64px;
     a:not(:first-child) {
       margin-left: 8px;
     }
