@@ -299,8 +299,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   //noinspection JSSuspiciousNameCombination
   let game = new Game({
-    containerId: 'canva',
-    //scoreId: 'score',
+    containerId: 'canva',    
     width: container.clientWidth,
     height: container.clientWidth,
     blockWidth: 8,
@@ -309,19 +308,3 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 });
-/*
- document.querySelector('#new-game').addEventListener('click', function () {
- game.reset();
- });
- */
-
-/*
- let buttons = document.querySelectorAll('.button-small');
- for (let b = 0; b < buttons.length; b++) {
- buttons[b].addEventListener('click', function (e) {
- let s = +e.target.innerText;
- game.setSize(s, s);
- game.reset();
- });
- }
- */
