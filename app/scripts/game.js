@@ -3,7 +3,9 @@
  */
 'use strict';
 
-var colors = [0x000000, 0xFFFFFF, 0x423b43, 0x6b5e68, 0xdce3e9, 0xbeb8b8];
+
+
+var colors = [0x000000, 0xFFFFFF, 0x02577e, 0x7bd3dd, 0xf0efea, 0xf9e8a3];
 
 var Game = function (config) {
 
@@ -95,7 +97,6 @@ var Game = function (config) {
       return
     }
     // get the shape that was clicked on
-
     let shape = evt.target;
     let curColor = shape.color;
 
@@ -299,7 +300,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   //noinspection JSSuspiciousNameCombination
   let game = new Game({
-    containerId: 'canva',    
+    containerId: 'canva',
     width: container.clientWidth,
     height: container.clientWidth,
     blockWidth: 8,

@@ -117,8 +117,16 @@ a {
   margin: 32px auto 0 auto;
   clear: both;
   width: 85%;
+  position: relative;
+  text-align: center;
+
+  > * {
+    text-align: left;
+  }
 
   > h3, > h4 {
+    position: relative;
+    display: inline-block;
     color: #000000;
     letter-spacing: 4px;
     text-align: center;
@@ -143,6 +151,7 @@ a {
   p {
     margin-bottom: 1em;
     strong {
+      display: inline-block;
       text-transform: uppercase;
     }
   }
@@ -156,6 +165,7 @@ a {
   flex-wrap: wrap;
 
   &__item {
+    position: relative;
     padding: 0 16px;
     max-width: 250px;
     width: 250px;
@@ -291,4 +301,51 @@ a {
       margin-left: 8px;
     }
   }
+}
+
+.draw {
+  position: relative;
+  opacity: 0;
+  z-index: 1;
+
+  &.draw-ready{
+    opacity: 1;
+  }
+  &.show{
+    svg {
+      opacity: 0;
+      transition: opacity 1s;
+    }
+  }
+}
+
+
+.d1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  fill: #fff;
+  stroke: #999999;
+  width: 100%;
+  height: 100%;
+
+  path {
+    vector-effect: non-scaling-stroke;
+    stroke-width: 4;
+    stroke-linecap: round;
+  }
+}
+
+.show {
+  opacity: 1;
+}
+
+path.stroke-medium {
+  stroke-width: 2;
+}
+
+path.stroke-thin {
+  stroke-width: 1;
 }
