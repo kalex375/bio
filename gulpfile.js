@@ -168,3 +168,17 @@ gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras'], () => {
 gulp.task('default', () => {
   runSequence(['clean', 'wiredep'], 'build');
 });
+
+
+var exec = require('child_process').exec;
+
+gulp.task('deploy', function (cb) {
+  exec('cd dist &&  git add . && git commit -m"build" && git push vps-train --force', {
+    encoding: 'binary',
+    maxBuffer: 5000 * 1024
+  }, function (err, stdout, stderr) {
+    console.log(stdout);
+    console.log(stderr);
+    cb();
+  });
+});
