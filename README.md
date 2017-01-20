@@ -1,4 +1,4 @@
-# MY PORTFOLIO #
+# MY BIO#
 
 ### Getting Started ###
 
