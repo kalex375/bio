@@ -1,9 +1,0 @@
-{
-  "name": "bio",
-  "private": true,
-  "dependencies": {
-    "jquery": "~2.1.1",
-    "font-awesome": "font-awsome#^4.6.3",
-    "pixi.js": "~4.3.3"
-  }
-}
